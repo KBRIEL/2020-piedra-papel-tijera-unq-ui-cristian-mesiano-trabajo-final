@@ -59,14 +59,14 @@ export default class Tablero extends Component{
            <div className="header" > 
               <div className="header" > 
                 <h1 clasName="titulo">PLAYER1 {this.state.p1}</h1>
-                 
-                    <section  >
+                <h3 className ="game">    PIEDRA PAPEL TIJERA LAGARTO SPOCK    </h3>
+                    {/* <section  >
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_piedra.bind(this)} ><img width="100%" src= {piedra}  alt="logo"  /></button>
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_papel.bind(this)} ><img width="100%" src= {papel}  alt="logo"  /></button>
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_tijera.bind(this)} ><img width="100%" src= {tijera}  alt="logo"  /></button>
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_lagarto.bind(this)}><img width="100%" src= {lagarto}  alt="logo"  /></button>
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_spock.bind(this)} ><img width="100%" src= {spock}  alt="logo"  /></button>
-                    </section>
+                    </section> */}
                 <h1 clasName="titulo">PLAYER2 {this.state.p2}</h1>
                 
               </div>
@@ -80,10 +80,20 @@ export default class Tablero extends Component{
                       
                         <img className = "boton_p2" src={this.state.oponente}/>
             </div>
+            
             <div>
                       <button className="fondo" type = "button" width="50%"  alt="logo" onClick= {this.reset.bind(this)} >RESET</button>
             </div>
             <Animation imagen= {this.state.foto} />
+            <div className="header2"> 
+            <section  >
+                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_piedra.bind(this)} ><img width="100%" src= {piedra}  alt="logo"  /></button>
+                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_papel.bind(this)} ><img width="100%" src= {papel}  alt="logo"  /></button>
+                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_tijera.bind(this)} ><img width="100%" src= {tijera}  alt="logo"  /></button>
+                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_lagarto.bind(this)}><img width="100%" src= {lagarto}  alt="logo"  /></button>
+                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_spock.bind(this)} ><img width="100%" src= {spock}  alt="logo"  /></button>
+                    </section>
+            </div>
         </div>
       
       );
@@ -175,14 +185,7 @@ function  b_piedra(you){
         // winP1,
       ganar()
       }
-      // if(you==4){ 
-      //   // winP1,
-      //   ganar(" lagarto")
-      // }
-      // if(you==5){
-      //   // winP2,
-      //   perder("spock")
-      // }
+   
     };
 
     function  b_papel(you){
@@ -199,14 +202,7 @@ function  b_piedra(you){
         // winP1,
       ganar()
       }
-      // if(you==5){ 
-      //   // winP1,
-      //   ganar("spock")
-      // }
-      // if(you==4){
-      //   // winP2,
-      //   perder(" lagarto")
-      // }
+
     }
 
     function  b_tijera(you){
@@ -223,21 +219,14 @@ function  b_piedra(you){
         // emp,
       
       }
-      // if(you==4){ 
-      //   // winP1,
-      //   ganar(" lagarto")
-      // }
-      // if(you==5){
-      //   // winP2,
-      //   perder("spock")
-      // }
+  
     }   
 
     function  b_lagarto(you){
   
       if(you==4){
         // emp,
-        // alert("empate"+ " "+ contador1+" "+ " lagarto")
+      
       }
       if(you==1||you==3){
         // winP2,
@@ -247,21 +236,13 @@ function  b_piedra(you){
         // winP1,
       ganar()
       }
-      // if(you==5){ 
-      //   // winP1,
-      //   ganar("spock")
-      // }
-      // if(you==3){
-      //   // winP2,
-      //   perder("tijera")
-      // }
+  
     }
 
     function  b_spock(you){
   
       if(you==5){
         // emp,
-        // alert("empate"+ " "+ contador1+" "+"spock")
       }
       if(you==2|| you==4){
         // winP2,
@@ -271,13 +252,6 @@ function  b_piedra(you){
         // winP1,
       ganar()
       }
-      // if(you==3){ 
-      //   // winP1,
-      //   ganar("tijera")
-      // }
-      // if(you==4){
-      //   // winP2,
-      //   perder(" lagarto")
-      // }
+    
     }
 

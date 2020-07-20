@@ -12,7 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.header2{
+  justify-content: center;
+}
 .App-header {
   background-color: black;
   
@@ -34,7 +36,7 @@
 
 }
 .game{
-  font-style: georgia ;
+  margin: 30px ;
 }
 .caja{
    display: inline-block;
