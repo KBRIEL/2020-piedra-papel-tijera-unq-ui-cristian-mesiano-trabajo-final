@@ -151,12 +151,12 @@ case 5:
 
 
 
-function perder(n){
-  // alert("has perdido con "+n+ " "+ "PLAYER2 puntaje"+ " "+ contador2+" "+" ")
+function perder(){
+  
   contador2 = contador2+1
 }
-function ganar(n){
-  // alert("tu ganas"+ " "+n+ "PLAYER1 puntaje"+ " "+ contador1+" "+" ")
+function ganar(){
+  
   contador1 = contador1+1
  
 };
@@ -165,72 +165,72 @@ function  b_piedra(you){
   
       if(you==1){
         // emp,
-        // alert("empate"+ " "+ contador1+" "+"piadra")
+      
       }
-      if(you==2){
+      if(you==2 ||you==5){
         // winP2,
-        perder("papel")
+        perder()
       }
-       if(you==3){
+       if(you==3||you==4){
         // winP1,
-      ganar("tijera")
+      ganar()
       }
-      if(you==4){ 
-        // winP1,
-        ganar(" lagarto")
-      }
-      if(you==5){
-        // winP2,
-        perder("spock")
-      }
+      // if(you==4){ 
+      //   // winP1,
+      //   ganar(" lagarto")
+      // }
+      // if(you==5){
+      //   // winP2,
+      //   perder("spock")
+      // }
     };
 
     function  b_papel(you){
   
       if(you==2){
         // emp,
-        // alert("empate"+ " "+ contador1+" "+"papel")
+      
       }
-      if(you==3){
+      if(you==3||you==4){
         // winP2,
-        perder("tijera")
+        perder()
       }
-       if(you==1){
+       if(you==1||you==5){
         // winP1,
-      ganar("piadra")
+      ganar()
       }
-      if(you==5){ 
-        // winP1,
-        ganar("spock")
-      }
-      if(you==4){
-        // winP2,
-        perder(" lagarto")
-      }
+      // if(you==5){ 
+      //   // winP1,
+      //   ganar("spock")
+      // }
+      // if(you==4){
+      //   // winP2,
+      //   perder(" lagarto")
+      // }
     }
 
     function  b_tijera(you){
 
-      if(you==1){
+      if(you==1||you==5){
         // winP2,
-        perder("piadra")
+        perder()
       }
-       if(you==2){
+       if(you==2||you==4){
         // winP1,
-      ganar("papel")
+      ganar()
       }
        if(you==3){
         // emp,
-        // alert("empate"+ " "+ contador1+" "+"tijera")
+      
       }
-      if(you==4){ 
-        // winP1,
-        ganar(" lagarto")
-      }
-      if(you==5){
-        // winP2,
-        perder("spock")
-      }
+      // if(you==4){ 
+      //   // winP1,
+      //   ganar(" lagarto")
+      // }
+      // if(you==5){
+      //   // winP2,
+      //   perder("spock")
+      // }
     }   
 
     function  b_lagarto(you){
@@ -239,22 +239,22 @@ function  b_piedra(you){
         // emp,
         // alert("empate"+ " "+ contador1+" "+ " lagarto")
       }
-      if(you==1){
+      if(you==1||you==3){
         // winP2,
-        perder("piadra")
+        perder()
       }
-       if(you==2){
+       if(you==2||you ==5){
         // winP1,
-      ganar("papel")
+      ganar()
       }
-      if(you==5){ 
-        // winP1,
-        ganar("spock")
-      }
-      if(you==3){
-        // winP2,
-        perder("tijera")
-      }
+      // if(you==5){ 
+      //   // winP1,
+      //   ganar("spock")
+      // }
+      // if(you==3){
+      //   // winP2,
+      //   perder("tijera")
+      // }
     }
 
     function  b_spock(you){
@@ -263,21 +263,21 @@ function  b_piedra(you){
         // emp,
         // alert("empate"+ " "+ contador1+" "+"spock")
       }
-      if(you==2){
+      if(you==2|| you==4){
         // winP2,
-        perder("papel")
+        perder()
       }
-       if(you==1){
+       if(you==1||you==3){
         // winP1,
-      ganar("piadra")
+      ganar()
       }
-      if(you==3){ 
-        // winP1,
-        ganar("tijera")
-      }
-      if(you==4){
-        // winP2,
-        perder(" lagarto")
-      }
+      // if(you==3){ 
+      //   // winP1,
+      //   ganar("tijera")
+      // }
+      // if(you==4){
+      //   // winP2,
+      //   perder(" lagarto")
+      // }
     }
 
