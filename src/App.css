@@ -14,9 +14,10 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: black;
+  
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -27,6 +28,14 @@
 .App-link {
   color: #61dafb;
 }
+.Animation{
+  float: center;
+ 
+
+}
+.caja{
+   display: inline-block;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +45,95 @@
     transform: rotate(360deg);
   }
 }
+.fondo{
+  background-color: black;
+  color:white;
+}
+.boton_p{
+  /* text-decoration: none; */
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  color: black;
+  background-color: black;
+  border-radius: 16px;
+  border: 1px solid #0000;
+}
+.boton_p2{
+  /* text-decoration: none; */
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  margin-top: 100;
+  /* font-weight: 600;
+  font-size: 20px; */
+  color: black;
+  background-color: black;
+  /* border-radius: 6px; */
+  border: 10px solid #0000;
+}
+
+.container2{
+  padding:50px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,300px);
+  grid-column-gap: 60px;
+  grid-row-gap:30px;
+  justify-content:between;
+  background-color: black;
+
+}
+.player1{
+  float: left;
+}
+.player2{
+  float: right;
+}
+.nameTitle{
+  float: center;
+}
+
+.header {
+  height: 50px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;;
+  align-content: center;
+}
+
+.titulo {
+  font-size: 25px;
+  padding: 10px;
+  color: #fff;
+}
+
+.boton-reiniciar {
+  position: absolute;
+  left: 12px;
+  top: 58px;
+}
+/* .botonimagen{
+  background-image:url("pptls center.jpg");
+  background-repeat:no-repeat;
+  height:100px;
+  width:100px;
+  background-position:center;
+} */
+ 
+.grid{
+	width :510px;
+	height:700px;
+	background-color :#2196F3;
+	display: grid;
+	grid-template-columns:150px 150px 150px;
+	grid-gap:30px;
+	grid-auto-rows:200px;
+	}
+/*
+.box{
+	background :slateblue;	
+	padding:10px;
+	color:white;
+	text-align: center;
+} */
