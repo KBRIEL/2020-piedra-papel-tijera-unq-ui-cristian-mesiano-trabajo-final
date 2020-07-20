@@ -2,10 +2,9 @@ import React, {useState,Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import './App.css';
-
 import PPTLS from './img/PPTLS.gif';
 import central from './img/pptls central.jpg';
-
+import Animation from './Animation.js'
 
 import lagarto from './img/lagarto.png';
 import lagartoR from './img/lagartoR.png';
@@ -84,7 +83,7 @@ export default class Tablero extends Component{
             <div>
                       <button className="fondo" type = "button" width="50%"  alt="logo" onClick= {this.reset.bind(this)} >RESET</button>
             </div>
-           
+            <Animation imagen= {this.state.foto} />
         </div>
       
       );

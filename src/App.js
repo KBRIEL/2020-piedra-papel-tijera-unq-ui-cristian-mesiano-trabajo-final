@@ -1,5 +1,4 @@
 import React from 'react';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import './App.css';
@@ -22,7 +21,8 @@ function App() {
     <div className="App" >      
       <header className="App-header">
         <div className = "caja">
-    
+          <h4>Bienvenidos a</h4>
+    <h3 className ="game">PIEDRA PAPEL TIJERA LAGARTO SPOCK</h3>
           <Tablero/>
        
         </div>
