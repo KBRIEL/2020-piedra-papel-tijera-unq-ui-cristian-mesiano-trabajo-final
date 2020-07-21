@@ -7,6 +7,8 @@ import central from './img/pptls central.jpg';
 import Animation from './Animation.js'
 import w1 from './img/w1.png';
 import w2 from './img/w2.png';
+import GANADOR from'./img/GANADOR.png';
+import PERDEDOR from './img/PERDEDOR.png';
 
 import lagarto from './img/lagarto.png';
 import lagartoR from './img/lagartoR.png';
@@ -45,7 +47,8 @@ export default class Tablero extends Component{
          p2:0,
          oponente:play2,
          foto: central,
-         iam:play1
+         iam:play1,
+         reset:"RESET"
        }
        
        
@@ -73,7 +76,7 @@ export default class Tablero extends Component{
             </div>
             <Animation imagen= {this.state.foto} />
             <div>
-                      <button className="fondo" type = "button" width="50%"  alt="logo" onClick= {this.reset.bind(this)} >RESET</button>
+                      <button className="fondo" type = "button" width="50%"  alt="logo" onClick= {this.reset.bind(this)} >{this.state.reset}</button>
             </div>
             
             <div className="header2"> 
@@ -91,8 +94,26 @@ export default class Tablero extends Component{
       );
     }
 
+    gameWin(){
+        if(this.state.p1>=5){
+          setTimeout(()=>{this.w_play1()},700)
+        }
+          if(this.state.p2>=5){
+            setTimeout(()=>{this.w_play2()},700)
+          }
+    }
+    w_play1(){
+      this.reset()
+    this.setState({foto: GANADOR,reset: "START NEW GAME"})
+    }
+
+    w_play2(){
+      this.reset()
+    this.setState({foto: PERDEDOR,reset: "START NEW GAME"})
+    }
+
  reset(){
-  this.setState({p1:0, p2:0,iam:play1, oponente: play2,foto:central})
+  this.setState({p1:0, p2:0,iam:play1, oponente: play2,foto:central, reset:"RESET"})
   contador2=0
   contador1=0
  }   
@@ -100,22 +121,23 @@ export default class Tablero extends Component{
   
  this.setState({foto:PPTLS,iam:play1, oponente: play2})
  
-  setTimeout(()=>{this.jugadaPiedra()},700)
+  setTimeout(()=>{this.jugadaPiedra()},500)
+
  }
 jugadaPiedra(){
    var election=sortear();
    this.setOponent(election)
   this.b_piedra(election)
   this.setState({p1:contador1, p2:contador2,iam:piedra});
+  this.gameWin()
 
 }
 
 
  btn_papel(){
   this.setState({foto:PPTLS,iam:play1, oponente: play2})
-  setTimeout(()=>{this.jugadaPapel()},700)
+  setTimeout(()=>{this.jugadaPapel()},500)
   
- 
 
  }
 
@@ -124,11 +146,12 @@ jugadaPiedra(){
   this.setOponent(election)
   this.b_papel(election)
   this.setState({p1:contador1, p2:contador2,iam:papel})
+  this.gameWin()
  }
 
  btn_tijera(){
   this.setState({foto:PPTLS,iam:play1, oponente: play2})
-  setTimeout(()=>{this.jugadaTijera()},700)
+  setTimeout(()=>{this.jugadaTijera()},500)
  
  }
 
@@ -137,12 +160,13 @@ jugadaPiedra(){
   this.setOponent(election)
   this.b_tijera(election)
   this.setState({p1:contador1, p2:contador2,iam:tijera})
-
+  this.gameWin()
  }
 
  btn_lagarto(){
   this.setState({foto:PPTLS,iam:play1, oponente: play2})
-  setTimeout(()=>{this.jugadaLagarto()},700)
+  setTimeout(()=>{this.jugadaLagarto()},500)
+ 
  }
 
  jugadaLagarto(){
@@ -150,13 +174,14 @@ jugadaPiedra(){
   this.setOponent(election)
   this.b_lagarto(election)
   this.setState({p1:contador1, p2:contador2,iam:lagarto})
-  // setTimeout(()=>{this.setState({foto:central})},1000)
+  this.gameWin()
+  
  }
  
  btn_spock(){
   this.setState({foto:PPTLS,iam:play1, oponente: play2})
-  setTimeout(()=>{this.jugadaSpock()},700)
-  // setTimeout(()=>{this.setState({foto:central})},1000)
+  setTimeout(()=>{this.jugadaSpock()},500)
+  
  }
 
  jugadaSpock(){
@@ -164,6 +189,7 @@ jugadaPiedra(){
   this.setOponent(election)
   this.b_spock(election)
   this.setState({p1:contador1, p2:contador2,iam:spock})
+  this.gameWin()
  }
 
 
