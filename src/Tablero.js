@@ -65,7 +65,7 @@ export default class Tablero extends Component{
               <div className="header" > 
                 <h1 clasName="game">PLAYER1 {this.state.p1}</h1>
                 <h3 className ="game">    PIEDRA PAPEL TIJERA LAGARTO SPOCK    </h3>
-                <h1 clasName="game">PLAYER2 {this.state.p2}</h1>
+                <h1 clasName="game">COMPUTER {this.state.p2}</h1>
                 
               </div>
             </div>
