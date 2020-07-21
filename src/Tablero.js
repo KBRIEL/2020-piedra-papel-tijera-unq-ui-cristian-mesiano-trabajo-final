@@ -58,21 +58,10 @@ export default class Tablero extends Component{
 
            <div className="header" > 
               <div className="header" > 
-                <h1 clasName="titulo">PLAYER1 {this.state.p1}</h1>
+                <h1 clasName="game">PLAYER1 {this.state.p1}</h1>
                 <h3 className ="game">    PIEDRA PAPEL TIJERA LAGARTO SPOCK    </h3>
-                    {/* <section  >
-                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_piedra.bind(this)} ><img width="100%" src= {piedra}  alt="logo"  /></button>
-                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_papel.bind(this)} ><img width="100%" src= {papel}  alt="logo"  /></button>
-                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_tijera.bind(this)} ><img width="100%" src= {tijera}  alt="logo"  /></button>
-                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_lagarto.bind(this)}><img width="100%" src= {lagarto}  alt="logo"  /></button>
-                          <button class="boton_p" type="button" id="tijb" onClick= {this.btn_spock.bind(this)} ><img width="100%" src= {spock}  alt="logo"  /></button>
-                    </section> */}
-                <h1 clasName="titulo">PLAYER2 {this.state.p2}</h1>
+                <h1 clasName="game">PLAYER2 {this.state.p2}</h1>
                 
-              </div>
-              <div className="header">
-                
-                  
               </div>
             </div>
             <div className="header">
@@ -80,11 +69,11 @@ export default class Tablero extends Component{
                       
                         <img className = "boton_p2" src={this.state.oponente}/>
             </div>
-            
+            <Animation imagen= {this.state.foto} />
             <div>
                       <button className="fondo" type = "button" width="50%"  alt="logo" onClick= {this.reset.bind(this)} >RESET</button>
             </div>
-            <Animation imagen= {this.state.foto} />
+            
             <div className="header2"> 
             <section  >
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_piedra.bind(this)} ><img width="100%" src= {piedra}  alt="logo"  /></button>
@@ -94,6 +83,7 @@ export default class Tablero extends Component{
                           <button class="boton_p" type="button" id="tijb" onClick= {this.btn_spock.bind(this)} ><img width="100%" src= {spock}  alt="logo"  /></button>
                     </section>
             </div>
+           
         </div>
       
       );
@@ -105,38 +95,76 @@ export default class Tablero extends Component{
   contador1=0
  }   
  btn_piedra(){
-  setTimeout(this.setState({foto:PPTLS}),1000)
+  
+ this.setState({foto:PPTLS,iam:play1, oponente: play2})
+ 
+  setTimeout(()=>{this.jugadaPiedra()},700)
+ }
+jugadaPiedra(){
    var election=sortear();
    this.setOponent(election)
   b_piedra(election)
-  this.setState({p1:contador1, p2:contador2,iam:piedra,foto:PPTLS})
-  
- }
+  this.setState({p1:contador1, p2:contador2,iam:piedra,foto:central});
+
+}
+
 
  btn_papel(){
+  this.setState({foto:PPTLS,iam:play1, oponente: play2})
+  setTimeout(()=>{this.jugadaPapel()},700)
+  
+ 
+
+ }
+
+ jugadaPapel(){
   var election=sortear();
   this.setOponent(election)
   b_papel(election)
-  this.setState({p1:contador1, p2:contador2,iam:papel,foto:PPTLS})
+  this.setState({p1:contador1, p2:contador2,iam:papel,foto:central})
  }
+
  btn_tijera(){
-  var election=sortear();
+  this.setState({foto:PPTLS,iam:play1, oponente: play2})
+  setTimeout(()=>{this.jugadaTijera()},700)
+ 
+ }
+
+ jugadaTijera(){
+ var election=sortear();
   this.setOponent(election)
   b_tijera(election)
-  this.setState({p1:contador1, p2:contador2,iam:tijera,foto:PPTLS})
+  this.setState({p1:contador1, p2:contador2,iam:tijera,foto:central})
+
  }
+
  btn_lagarto(){
+  this.setState({foto:PPTLS,iam:play1, oponente: play2})
+  setTimeout(()=>{this.jugadaLagarto()},700)
+ }
+
+ jugadaLagarto(){
   var election=sortear();
   this.setOponent(election)
   b_lagarto(election)
-  this.setState({p1:contador1, p2:contador2,iam:lagarto,foto:PPTLS})
+  this.setState({p1:contador1, p2:contador2,iam:lagarto,foto:central})
+  // setTimeout(()=>{this.setState({foto:central})},1000)
  }
+ 
  btn_spock(){
-  var election=sortear();
+  this.setState({foto:PPTLS,iam:play1, oponente: play2})
+  setTimeout(()=>{this.jugadaSpock()},700)
+  // setTimeout(()=>{this.setState({foto:central})},1000)
+ }
+
+ jugadaSpock(){
+    var election=sortear();
   this.setOponent(election)
   b_spock(election)
-  this.setState({p1:contador1, p2:contador2,iam:spock,foto:PPTLS})
+  this.setState({p1:contador1, p2:contador2,iam:spock,foto:central})
  }
+
+
  setOponent(op){
    switch(op){
 case 1:
@@ -156,6 +184,11 @@ case 5:
   break;
    }
  }
+
+
+
+ 
+
 
 };
 
