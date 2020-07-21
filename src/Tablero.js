@@ -5,6 +5,8 @@ import './App.css';
 import PPTLS from './img/PPTLS.gif';
 import central from './img/pptls central.jpg';
 import Animation from './Animation.js'
+import w1 from './img/w1.png';
+import w2 from './img/w2.png';
 
 import lagarto from './img/lagarto.png';
 import lagartoR from './img/lagartoR.png';
@@ -103,8 +105,8 @@ export default class Tablero extends Component{
 jugadaPiedra(){
    var election=sortear();
    this.setOponent(election)
-  b_piedra(election)
-  this.setState({p1:contador1, p2:contador2,iam:piedra,foto:central});
+  this.b_piedra(election)
+  this.setState({p1:contador1, p2:contador2,iam:piedra});
 
 }
 
@@ -120,8 +122,8 @@ jugadaPiedra(){
  jugadaPapel(){
   var election=sortear();
   this.setOponent(election)
-  b_papel(election)
-  this.setState({p1:contador1, p2:contador2,iam:papel,foto:central})
+  this.b_papel(election)
+  this.setState({p1:contador1, p2:contador2,iam:papel})
  }
 
  btn_tijera(){
@@ -133,8 +135,8 @@ jugadaPiedra(){
  jugadaTijera(){
  var election=sortear();
   this.setOponent(election)
-  b_tijera(election)
-  this.setState({p1:contador1, p2:contador2,iam:tijera,foto:central})
+  this.b_tijera(election)
+  this.setState({p1:contador1, p2:contador2,iam:tijera})
 
  }
 
@@ -146,8 +148,8 @@ jugadaPiedra(){
  jugadaLagarto(){
   var election=sortear();
   this.setOponent(election)
-  b_lagarto(election)
-  this.setState({p1:contador1, p2:contador2,iam:lagarto,foto:central})
+  this.b_lagarto(election)
+  this.setState({p1:contador1, p2:contador2,iam:lagarto})
   // setTimeout(()=>{this.setState({foto:central})},1000)
  }
  
@@ -160,8 +162,8 @@ jugadaPiedra(){
  jugadaSpock(){
     var election=sortear();
   this.setOponent(election)
-  b_spock(election)
-  this.setState({p1:contador1, p2:contador2,iam:spock,foto:central})
+  this.b_spock(election)
+  this.setState({p1:contador1, p2:contador2,iam:spock})
  }
 
 
@@ -187,104 +189,199 @@ case 5:
 
 
 
- 
-
-
-};
-
-
-
-function perder(){
-  
+ perder(){
+  this.setState({foto:w2});
   contador2 = contador2+1
 }
-function ganar(){
-  
+ganar(){
+  this.setState({foto:w1});
   contador1 = contador1+1
  
 };
 
-function  b_piedra(you){
+ b_piedra(you){
   
       if(you==1){
         // emp,
-      
+        this.setState({foto:central});
       }
       if(you==2 ||you==5){
         // winP2,
-        perder()
+        this.perder()
       }
        if(you==3||you==4){
         // winP1,
-      ganar()
+        this.ganar()
       }
    
     };
 
-    function  b_papel(you){
+ b_papel(you){
   
       if(you==2){
         // emp,
-      
+        this.setState({foto:central});
       }
       if(you==3||you==4){
         // winP2,
-        perder()
+        this.perder()
       }
        if(you==1||you==5){
         // winP1,
-      ganar()
+        this.ganar()
       }
 
     }
 
-    function  b_tijera(you){
+ b_tijera(you){
 
       if(you==1||you==5){
         // winP2,
-        perder()
+        this.perder()
       }
        if(you==2||you==4){
         // winP1,
-      ganar()
+        this.ganar()
       }
        if(you==3){
         // emp,
-      
+        this.setState({foto:central});
       }
   
     }   
 
-    function  b_lagarto(you){
+  b_lagarto(you){
   
       if(you==4){
         // emp,
-      
+        this.setState({foto:central});
       }
       if(you==1||you==3){
         // winP2,
-        perder()
+        this.perder()
       }
        if(you==2||you ==5){
         // winP1,
-      ganar()
+        this.ganar()
       }
   
     }
 
-    function  b_spock(you){
+  b_spock(you){
   
       if(you==5){
         // emp,
+        this.setState({foto:central});
       }
       if(you==2|| you==4){
         // winP2,
-        perder()
+        this.perder()
       }
        if(you==1||you==3){
         // winP1,
-      ganar()
+        this.ganar()
       }
     
     }
+
+ 
+
+
+};
+
+
+
+// function perder(){
+  
+//   contador2 = contador2+1
+// }
+// function ganar(){
+  
+//   contador1 = contador1+1
+ 
+// };
+
+// function  b_piedra(you){
+  
+//       if(you==1){
+//         // emp,
+      
+//       }
+//       if(you==2 ||you==5){
+//         // winP2,
+//         perder()
+//       }
+//        if(you==3||you==4){
+//         // winP1,
+//       ganar()
+//       }
+   
+//     };
+
+//     function  b_papel(you){
+  
+//       if(you==2){
+//         // emp,
+      
+//       }
+//       if(you==3||you==4){
+//         // winP2,
+//         perder()
+//       }
+//        if(you==1||you==5){
+//         // winP1,
+//       ganar()
+//       }
+
+//     }
+
+//     function  b_tijera(you){
+
+//       if(you==1||you==5){
+//         // winP2,
+//         perder()
+//       }
+//        if(you==2||you==4){
+//         // winP1,
+//       ganar()
+//       }
+//        if(you==3){
+//         // emp,
+      
+//       }
+  
+//     }   
+
+//     function  b_lagarto(you){
+  
+//       if(you==4){
+//         // emp,
+      
+//       }
+//       if(you==1||you==3){
+//         // winP2,
+//         perder()
+//       }
+//        if(you==2||you ==5){
+//         // winP1,
+//       ganar()
+//       }
+  
+//     }
+
+//     function  b_spock(you){
+  
+//       if(you==5){
+//         // emp,
+//       }
+//       if(you==2|| you==4){
+//         // winP2,
+//         perder()
+//       }
+//        if(you==1||you==3){
+//         // winP1,
+//       ganar()
+//       }
+    
+//     }
 
